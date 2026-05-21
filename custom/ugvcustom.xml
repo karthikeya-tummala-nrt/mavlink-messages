@@ -295,16 +295,16 @@
         <description> Reserved </description>
       </entry>
 
-      <entry value="1" name="LOW_SPEED">
+      <entry value="1" name="UGV_SPEED_MODE_LOW_SPEED">
         <description>Low Speed</description>
       </entry>
 
-      <entry value="2" name="MEDIUM_SPEED">
-        <description>Low Speed</description>
+      <entry value="2" name="UGV_SPEED_MODE_MEDIUM_SPEED">
+        <description>Medium Speed</description>
       </entry>
 
-      <entry value="3" name="HIGH_SPEED">
-        <description>Low Speed</description>
+      <entry value="3" name="UGV_SPEED_MODE_HIGH_SPEED">
+        <description>High Speed</description>
       </entry>
 
     </enum>
