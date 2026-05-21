@@ -313,10 +313,6 @@
 
       <description>Drive mode of UGV</description>
 
-      <entry value="0" name="RESERVED">
-        <description> Reserved </description>
-      </entry>
-
       <entry value="1" name="SPEED_MODE">
         <description> Speed Mode </description>
       </entry>
