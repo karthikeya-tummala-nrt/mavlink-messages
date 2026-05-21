@@ -288,6 +288,53 @@
       </entry>
     </enum>
 
+    <enum name="UGV_SPEED_MODE">
+      <description>Speed mode of UGV</description>
+
+      <entry value="0" name="RESERVED">
+        <description> Reserved </description>
+      </entry>
+
+      <entry value="1" name="LOW_SPEED">
+        <description>Low Speed</description>
+      </entry>
+
+      <entry value="2" name="MEDIUM_SPEED">
+        <description>Low Speed</description>
+      </entry>
+
+      <entry value="3" name="HIGH_SPEED">
+        <description>Low Speed</description>
+      </entry>
+
+    </enum>
+
+    <enum name="UGV_DRIVE_MODE">
+
+      <description>Drive mode of UGV</description>
+
+      <entry value="0" name="RESERVED">
+        <description> Reserved </description>
+      </entry>
+
+      <entry value="1" name="SPEED_MODE">
+        <description> Speed Mode </description>
+      </entry>
+
+      <entry value="2" name="TORQUE_MODE">
+        <description> Torque Mode </description>
+      </entry>
+
+      <entry value="3" name="TORQUE_WITH_SPEED_LIMIT">
+        <description> Torque with speed limit </description>
+      </entry>
+
+      <entry value="4" name="POSITION_MODE">
+        <description> Position Mode </description>
+      </entry>
+
+    </enum>
+
     <enum name="MODE_CHANGE_REASON">
       <description>Reason for sub-mode change.</description>
       <entry value="0" name="GCS_COMMAND">
@@ -494,12 +541,28 @@
         Current active sub mode.
       </field>
 
+      <field type="uint8_t" name="speed_mode" enum="UGV_SPEED_MODE">
+        Current active speed mode.
+      </field>
+
+      <field type="uint8_t" name="drive_mode" enum="UGV_DRIVE_MODE">
+        Current active drive mode.
+      </field>
+
       <field type="uint8_t" name="intended_main_mode" enum="UGV_MAIN_MODE">
         Last main mode commanded by GCS.
       </field>
 
       <field type="uint8_t" name="intended_sub_mode" enum="UGV_SUB_MODE">
         Last sub mode commanded by GCS.
+      </field>
+
+      <field type="uint8_t" name="intended_speed_mode" enum="UGV_SPEED_MODE">
+        Last speed mode commanded by GCS.
+      </field>
+
+      <field type="uint8_t" name="intended_drive_mode" enum="UGV_DRIVE_MODE">
+        Last drive mode commanded by GCS.
       </field>
 
       <field type="uint8_t" name="mode_change_reason" enum="MODE_CHANGE_REASON">
@@ -534,9 +597,9 @@
         Right Motor Controller Faults
       </field>
 
-      <field type="uint8_t" name="left_mc_voltage">Left Motor Controller Voltage (Unit: 0.1 V)</field>
+      <field type="uint16_t" name="left_mc_voltage">Left Motor Controller Voltage (Unit: 0.1 V)</field>
 
-      <field type="uint8_t" name="right_mc_voltage">Right Motor Controller Voltage (Unit: 0.1 V)</field>
+      <field type="uint16_t" name="right_mc_voltage">Right Motor Controller Voltage (Unit: 0.1 V)</field>
 
       <field type="uint8_t" name="left_mc_temperature">Left Motor Controller Temperature (Unit: 1 Degree Celsius)</field>
 
