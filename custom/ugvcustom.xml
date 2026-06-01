@@ -309,13 +309,13 @@
 
     <enum name="UGV_SPEED_MODE">
       <description>Operator speed mode in which the UGV operates in.</description>
-      <entry value="1" name="LOW">
+      <entry value="1" name="UGV_SPEED_LOW">
         <description>low speed mode</description>
       </entry>
-      <entry value="2" name="MEDIUM">
+      <entry value="2" name="UGV_SPEED_MEDIUM">
         <description>medium speed mode</description>
       </entry>
-      <entry value="3" name="HIGH">
+      <entry value="3" name="UGV_SPEED_HIGH">
         <description>high speed mode</description>
       </entry>
     </enum>
@@ -494,9 +494,9 @@
         </description>
 
         <!-- Timestamp 1 is corresponding to the timestamp of CAN message VCU_SUBSYSTEM_STATE-->
-        <field type="uint8_t" name="ts1_hour"></field>
-        <field type="uint8_t" name="ts1_minute"></field>
-        <field type="uint8_t" name="ts1_second"></field>
+        <field type="uint8_t" name="ts1_hour">no_definition</field>
+        <field type="uint8_t" name="ts1_minute">no_definition</field>
+        <field type="uint8_t" name="ts1_second">no_definition</field>
 
         <!-- BYTE 10 -->
         <field type="uint8_t" name="subsystem_health_1" enum="UGV_HEALTH_STATE">
@@ -533,9 +533,9 @@
       </field>
 
       <!-- Timestamp 2 is corresponding to the timestamp of CAN message VCU_BAT_SOC-->
-      <field type="uint8_t" name="ts2_hour"></field>
-      <field type="uint8_t" name="ts2_minute"></field>
-      <field type="uint8_t" name="ts2_second"></field>
+      <field type="uint8_t" name="ts2_hour">no_definition</field>
+      <field type="uint8_t" name="ts2_minute">no_definition</field>
+      <field type="uint8_t" name="ts2_second">no_definition</field>
 
       <field type="uint8_t" name="battery_soc">
           soc percentage of remaining battery
@@ -587,9 +587,9 @@
       </field>
 
       <!-- Timestamp 3 is corresponding to the timestamp of CAN message VCU_DRIVE_HEALTH-->
-      <field type="uint8_t" name="ts3_hour"></field>
-      <field type="uint8_t" name="ts3_minute"></field>
-      <field type="uint8_t" name="ts3_second"></field>
+      <field type="uint8_t" name="ts3_hour">no_definition</field>
+      <field type="uint8_t" name="ts3_minute">no_definition</field>
+      <field type="uint8_t" name="ts3_second">no_definition</field>
 
       <!-- MOTOR FAULTS-->
 
