@@ -134,7 +134,7 @@
       </entry>
     </enum>
 
-	  <enum name="PUSH_BUTTONS" bitmask="true">
+    <enum name="PUSH_BUTTONS" bitmask="true">
       <description>Used to indicate the current state of the extra feature buttons</description>
       <entry value="1" name="EXTRA_FEATURE_1_PRESS">
         <description> a single short press of extra feature 1 button. </description>
@@ -354,26 +354,26 @@
 
     <!-- HEALTH STATE ENUM -->
     <enum name="UGV_HEALTH_STATE">
-        <description>
-            Generic subsystem communication and health status.
-            Used for motor controllers, batteries, PDUs, and other subsystems.
-        </description>
+      <description>
+        Generic subsystem communication and health status.
+        Used for motor controllers, batteries, PDUs, and other subsystems.
+      </description>
 
-        <entry value="0" name="RESERVED_STATE">
-            <description>Reserved state.</description>
-        </entry>
+      <entry value="0" name="RESERVED_STATE">
+        <description>Reserved state.</description>
+      </entry>
 
-        <entry value="1" name="NO_COMMUNICATION_STATE">
-            <description>No communication with subsystem.</description>
-        </entry>
+      <entry value="1" name="NO_COMMUNICATION_STATE">
+        <description>No communication with subsystem.</description>
+      </entry>
 
-        <entry value="2" name="COMMUNICATING_HEALTHY_STATE">
-            <description>Subsystem communicating and healthy.</description>
-        </entry>
+      <entry value="2" name="COMMUNICATING_HEALTHY_STATE">
+        <description>Subsystem communicating and healthy.</description>
+      </entry>
 
-        <entry value="3" name="FAULT_STATE">
-            <description>Subsystem communicating but unhealthy. Fault present.</description>
-        </entry>
+      <entry value="3" name="FAULT_STATE">
+        <description>Subsystem communicating but unhealthy. Fault present.</description>
+      </entry>
     </enum>
 
   </enums>
@@ -484,31 +484,31 @@
     </message>
 
     <message id="50001" name="UGV_SYSTEM_INFO">
-        <description>
-            Reports subsystem communication and health status of the UGV platform.
-            Each subsystem uses 2-bit encoding:
-            0x01 = No communication
-            0x10 = Communicating and healthy
-            0x11 = Communicating and unhealthy (fault present)
-            0x00 = Reserved
-        </description>
+      <description>
+        Reports subsystem communication and health status of the UGV platform.
+        Each subsystem uses 2-bit encoding:
+        0x01 = No communication
+        0x10 = Communicating and healthy
+        0x11 = Communicating and unhealthy (fault present)
+        0x00 = Reserved
+      </description>
 
-        <!-- Timestamp 1 is corresponding to the timestamp of CAN message VCU_SUBSYSTEM_STATE-->
-        <field type="uint8_t" name="ts1_hour">no_definition</field>
-        <field type="uint8_t" name="ts1_minute">no_definition</field>
-        <field type="uint8_t" name="ts1_second">no_definition</field>
+      <!-- Timestamp 1 is corresponding to the timestamp of CAN message VCU_SUBSYSTEM_STATE-->
+      <field type="uint8_t" name="ts1_hour">no_definition</field>
+      <field type="uint8_t" name="ts1_minute">no_definition</field>
+      <field type="uint8_t" name="ts1_second">no_definition</field>
 
-        <!-- BYTE 10 -->
-        <field type="uint8_t" name="subsystem_health_1" enum="UGV_HEALTH_STATE">
-            Packed subsystem health information.
+      <!-- BYTE 10 -->
+      <field type="uint8_t" name="subsystem_health_1" enum="UGV_HEALTH_STATE">
+        Packed subsystem health information.
 
-            Bit 0-1 : Left Motor Controller Health
-            Bit 2-3 : Right Motor Controller Health
-            Bit 4-5 : HV Battery Health
-            Bit 6-7 : LV Battery Health
-        </field>
+        Bit 0-1 : Left Motor Controller Health
+        Bit 2-3 : Right Motor Controller Health
+        Bit 4-5 : HV Battery Health
+        Bit 6-7 : LV Battery Health
+      </field>
 
-        <!-- BYTE 11 -->
+      <!-- BYTE 11 -->
       <field type="uint8_t" name="subsystem_health_2" enum="UGV_HEALTH_STATE">
         Bit 0-1 : LV PDU
         Bit 2-3 : DC-DC 48V to 12V
@@ -538,9 +538,9 @@
       <field type="uint8_t" name="ts2_second">no_definition</field>
 
       <field type="uint8_t" name="battery_soc">
-          soc percentage of remaining battery
+        soc percentage of remaining battery
       </field>
-        
+
       <!-- MODES -->
       <field type="uint8_t" name="main_mode" enum="UGV_MAIN_MODE">
         Current active main mode.
@@ -619,13 +619,13 @@
         Front Motor Controller Faults
       </field>
 
-      <field type="uint8_t" name="rear_mc_voltage">Left Motor Controller Voltage (Unit: 0.1 V)</field>
+<!--      <field type="uint8_t" name="rear_mc_voltage">Left Motor Controller Voltage (Unit: 0.1 V)</field>-->
 
-      <field type="uint8_t" name="front_mc_voltage">Right Motor Controller Voltage (Unit: 0.1 V)</field>
+<!--      <field type="uint8_t" name="front_mc_voltage">Right Motor Controller Voltage (Unit: 0.1 V)</field>-->
 
-      <field type="uint8_t" name="rear_mc_temperature">Left Motor Controller Temperature (Unit: 1 Degree Celsius)</field>
+<!--      <field type="uint8_t" name="rear_mc_temperature">Left Motor Controller Temperature (Unit: 1 Degree Celsius)</field>-->
 
-      <field type="uint8_t" name="front_mc_temperature">Right Motor Controller Temperature (Unit: 1 Degree Celsius)</field>
+<!--      <field type="uint8_t" name="front_mc_temperature">Right Motor Controller Temperature (Unit: 1 Degree Celsius)</field>-->
 
       <!-- light status -->
       <field type="uint8_t" name="light_status">
